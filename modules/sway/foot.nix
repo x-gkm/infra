@@ -1,0 +1,21 @@
+{
+  flake.modules.homeManager.sway =
+    { pkgs, ... }:
+    {
+      home.packages = [ pkgs.nerd-fonts.comic-shanns-mono ];
+      fonts.fontconfig.enable = true;
+
+      programs.foot = {
+        enable = true;
+        settings = {
+          main = {
+            font = "ComicShannsMono Nerd Font Mono:size=14";
+            resize-by-cells = false;
+          };
+          "colors-dark" = {
+            alpha = 0.8;
+          };
+        };
+      };
+    };
+}

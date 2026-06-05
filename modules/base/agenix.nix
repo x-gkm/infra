@@ -1,11 +1,15 @@
 { inputs, ... }:
 {
-  flake.modules.nixos.base = {
-    imports = [
-      inputs.agenix.nixosModules.default
-    ];
+  flake.modules.nixos.base =
+    { pkgs, ... }:
+    let
+      inherit (pkgs.stdenv.hostPlatform) system;
+    in
+    {
+      imports = [
+        inputs.agenix.nixosModules.default
+      ];
 
-    # TODO: Don't hardcode the system.
-    environment.systemPackages = [ inputs.agenix.packages.x86_64-linux.default ];
-  };
+      environment.systemPackages = [ inputs.agenix.packages.${system}.default ];
+    };
 }

@@ -11,6 +11,7 @@
           main = {
             font = "ComicShannsMono Nerd Font Mono:size=14";
             resize-by-cells = false;
+            pad = "10x10";
           };
           "colors-dark" = {
             alpha = 0.8;

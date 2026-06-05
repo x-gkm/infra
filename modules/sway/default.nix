@@ -1,6 +1,6 @@
-{ self, ... }:
+{ self, den, ... }:
 {
-  flake.modules.homeManager.sway = {
+  den.aspects.sway.homeManager = {
     wayland.windowManager.sway = {
       enable = true;
       config = {
@@ -24,21 +24,19 @@
     programs.swaylock.enable = true;
   };
 
-  flake.modules.nixos.gkm-laptop = {
-    programs.regreet = {
-      enable = true;
-      cageArgs = [
-        "-m"
-        "last"
-      ];
+  den.aspects.gkm-laptop = {
+    nixos = {
+      programs.regreet = {
+        enable = true;
+        cageArgs = [
+          "-m"
+          "last"
+        ];
+      };
+
+      programs.sway.enable = true;
     };
 
-    programs.sway.enable = true;
+    provides.to-users.includes = [ den.aspects.sway ];
   };
-
-  flake.modules.homeManager.gkm =
-    { lib, osConfig, ... }:
-    {
-      imports = lib.optional osConfig.programs.sway.enable self.modules.homeManager.sway;
-    };
 }

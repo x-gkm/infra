@@ -1,6 +1,5 @@
 {
-  flake.modules.nixos.base = {
-    system.stateVersion = "26.05";
+  den.aspects.base.nixos = {
     nix.settings.experimental-features = "nix-command flakes";
     nixpkgs.config.allowUnfree = true;
   };

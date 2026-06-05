@@ -1,15 +1,20 @@
-{ inputs, ... }:
+{ den, inputs, ... }:
 {
-  flake.modules.nixos.base =
-    { pkgs, ... }:
-    let
-      inherit (pkgs.stdenv.hostPlatform) system;
-    in
-    {
-      imports = [
-        inputs.agenix.nixosModules.default
-      ];
+  den.aspects.base = {
+    includes = [ den.batteries.inputs' ];
+    nixos =
+      { inputs', ... }:
+      {
+        imports = [
+          inputs.agenix.nixosModules.default
+        ];
 
-      environment.systemPackages = [ inputs.agenix.packages.${system}.default ];
-    };
+        environment.systemPackages = [ inputs'.agenix.packages.default ];
+      };
+  };
+
+  flake-file.inputs.agenix = {
+    url = "github:ryantm/agenix";
+    inputs.nixpkgs.follows = "nixpkgs";
+  };
 }

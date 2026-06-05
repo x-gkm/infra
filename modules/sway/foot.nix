@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.sway =
+  den.aspects.sway.homeManager =
     { pkgs, ... }:
     {
       home.packages = [ pkgs.nerd-fonts.comic-shanns-mono ];

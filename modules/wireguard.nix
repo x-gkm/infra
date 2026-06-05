@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.void-ptr =
+  den.aspects.void-ptr.nixos =
     { config, pkgs, ... }:
     {
       networking.nat = {
@@ -56,7 +56,7 @@
       networking.firewall.allowedUDPPorts = [ 9090 ];
     };
 
-  flake.modules.nixos.gkm-laptop =
+  den.aspects.gkm-laptop.nixos =
     { config, ... }:
     {
       age.secrets.wg0-key = {

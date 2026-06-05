@@ -1,5 +1,5 @@
 {
-  flake.modules.nixos.base = {
+  den.aspects.base.nixos = {
     time.timeZone = "Europe/Istanbul";
 
     i18n.defaultLocale = "en_US.UTF-8";

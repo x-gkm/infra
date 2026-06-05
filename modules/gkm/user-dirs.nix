@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.gkm = {
+  den.aspects.gkm.homeManager = {
     xdg.userDirs = {
       enable = true;
       createDirectories = true;

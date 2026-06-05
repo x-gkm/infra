@@ -1,5 +1,5 @@
 {
-  flake.modules.homeManager.sway = {
+  den.aspects.sway.homeManager = {
     services.kanshi = {
       enable = true;
       settings = [

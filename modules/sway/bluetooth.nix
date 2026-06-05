@@ -1,11 +1,10 @@
 {
-  flake.modules.nixos.gkm-laptop = {
+  den.aspects.gkm-laptop.nixos = {
     services.blueman.enable = true;
     hardware.bluetooth.enable = true;
   };
-  flake.modules.homeManager.sway =
-    { osConfig, ... }:
-    {
-      services.blueman-applet.enable = true;
-    };
+
+  den.aspects.sway.homeManager = {
+    services.blueman-applet.enable = true;
+  };
 }

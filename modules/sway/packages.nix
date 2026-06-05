@@ -6,6 +6,7 @@
         fastfetch
         discord
         google-chrome
+        wl-clipboard
       ];
     };
 }

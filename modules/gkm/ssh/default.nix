@@ -6,4 +6,10 @@
     ];
     services.openssh.enable = true;
   };
+
+  flake.modules.nixos.void-ptr =
+    { config, ... }:
+    {
+      users.users.root.openssh.authorizedKeys = config.users.users.gkm.openssh.authorizedKeys;
+    };
 }

@@ -35,6 +35,7 @@
       };
 
       programs.sway.enable = true;
+      services.libinput.enable = true;
     };
 
     provides.to-users.includes = [ den.aspects.sway ];

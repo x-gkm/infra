@@ -1,5 +1,7 @@
 { den, ... }:
 {
+  den.hosts.x86_64-linux.gkm-laptop.users.gkm = { };
+
   den.aspects.gkm-laptop = {
     includes = [
       den.aspects.base

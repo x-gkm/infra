@@ -1,5 +1,7 @@
 { den, ... }:
 {
+  den.hosts.x86_64-linux.void-ptr.users.gkm = { };
+
   den.aspects.void-ptr = {
     includes = [
       den.aspects.base

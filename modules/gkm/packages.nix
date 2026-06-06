@@ -7,6 +7,7 @@
         unzip
         zip
         yazi
+        restic
       ];
     };
 }

@@ -1,7 +1,7 @@
 let
   gkm = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIEOlcxrG2x0tS38ouWo//gPDWtqRGiltzIjLyXmdPTaO";
   void-ptr = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGQX7n25x/DQrIrV+OqmrjyUaXPaEaG6X39ocjpG85+S";
-  gkm-laptop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILrW7Y8f1p5EQMXKwYuYdXEia0cFUNs1Mgghutf3KdIJ";
+  gkm-laptop = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAILiPNbPBv1UHAYWCzZywDRWcfE+sUK6h2e0ym+UrHfoJ";
 in
 {
   "wg0-void-ptr.age" = {

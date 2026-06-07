@@ -12,13 +12,13 @@
         ];
 
         wayland.windowManager.sway.extraConfig = ''
-          for_window [app_id="lxqt-policykit-agent"] {
+          for_window [title="Authentication Required"] {
               floating enable
               move position center
           }
         '';
 
-        systemd.user.services.lqxt-policykit-agent = {
+        systemd.user.services.lxqt-policykit-agent = {
           Unit = {
             Description = "LXQt PolicyKit handler";
             Documentation = "man:lxqt-policykit-agent(1)";

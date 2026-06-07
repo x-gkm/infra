@@ -8,6 +8,7 @@
         zip
         yazi
         restic
+        bitwarden-cli
       ];
     };
 }

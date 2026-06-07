@@ -11,6 +11,10 @@
 
         environment.systemPackages = [ inputs'.agenix.packages.default ];
       };
+
+    homeManager = {
+      imports = [ inputs.agenix.homeManagerModules.default ];
+    };
   };
 
   flake-file.inputs.agenix = {

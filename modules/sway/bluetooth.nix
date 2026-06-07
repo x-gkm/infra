@@ -6,5 +6,12 @@
 
   den.aspects.sway.homeManager = {
     services.blueman-applet.enable = true;
+
+    wayland.windowManager.sway.extraConfig = ''
+      for_window [app_id="blueman-manager"] {
+          floating enable
+          move position center
+      }
+    '';
   };
 }

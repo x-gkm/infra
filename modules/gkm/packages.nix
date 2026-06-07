@@ -9,6 +9,7 @@
         yazi
         restic
         bitwarden-cli
+        tokei
       ];
     };
 }

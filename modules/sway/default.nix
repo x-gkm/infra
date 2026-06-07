@@ -6,11 +6,6 @@
       config = {
         modifier = "Mod4";
         gaps.inner = 10;
-        output = {
-          "*" = {
-            bg = "${wallpapers/wallhaven-zpq1dg.jpg} fill";
-          };
-        };
         window.titlebar = false;
         bars = [ ];
       };

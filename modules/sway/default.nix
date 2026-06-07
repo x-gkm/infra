@@ -11,11 +11,6 @@
             bg = "${wallpapers/wallhaven-zpq1dg.jpg} fill";
           };
         };
-        input = {
-          "type:pointer" = {
-            accel_profile = "flat";
-          };
-        };
         window.titlebar = false;
         bars = [ ];
       };

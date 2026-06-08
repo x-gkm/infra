@@ -4,7 +4,15 @@
     {
       programs.aerc = {
         enable = true;
-        extraConfig.general.unsafe-accounts-conf = true;
+        extraConfig = {
+          general.unsafe-accounts-conf = true;
+          filters = {
+            "text/plain" = "colorize";
+            "subject,~^\\[PATCH" = "hldiff";
+            "text/html" = "html";
+            "text/*" = "plaintext";
+          };
+        };
       };
 
       accounts.email.accounts.personal.aerc = {

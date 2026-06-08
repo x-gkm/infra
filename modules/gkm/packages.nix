@@ -10,6 +10,7 @@
         restic
         bitwarden-cli
         tokei
+        qrencode
       ];
     };
 }

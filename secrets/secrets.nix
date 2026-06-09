@@ -25,6 +25,13 @@ in
     ];
     armor = true;
   };
+  "miniflux-gkm.age" = {
+    publicKeys = [
+      gkm
+      void-ptr
+    ];
+    armor = true;
+  };
   "soju-gkm.age" = {
     publicKeys = [
       gkm

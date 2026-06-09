@@ -1,0 +1,48 @@
+From 3191f2315611b3d17f7d3b3253697aaad3265449 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?G=C3=B6kmen=20Kaplan?= <gokmen.kaplan.9163@gmail.com>
+Date: Wed, 10 Jun 2026 00:21:00 +0300
+Subject: [PATCH] Change APIKey to APIKeyFile
+
+---
+ internal/config/backends.go | 12 +++++++++---
+ 1 file changed, 9 insertions(+), 3 deletions(-)
+
+diff --git a/internal/config/backends.go b/internal/config/backends.go
+index 850a3b0..ea01244 100644
+--- a/internal/config/backends.go
++++ b/internal/config/backends.go
+@@ -5,14 +5,15 @@ import (
+ 	"fmt"
+ 	"io"
+ 	"net/http"
++	"os"
+ 	"strings"
+ 
+ 	miniflux "miniflux.app/v2/client"
+ )
+ 
+ type MinifluxBackend struct {
+-	Host   string `yaml:"host"`
+-	APIKey string `yaml:"api_key"`
++	Host       string `yaml:"host"`
++	APIKeyFile string `yaml:"api_key_file"`
+ }
+ 
+ type FreshRSSBackend struct {
+@@ -28,7 +29,12 @@ type Backends struct {
+ }
+ 
+ func (mfb *MinifluxBackend) GetFeeds() ([]Feed, error) {
+-	mf := miniflux.NewClient(mfb.Host, mfb.APIKey)
++	apiKey, err := os.ReadFile(os.ExpandEnv(mfb.APIKeyFile))
++	if err != nil {
++		return []Feed{}, err
++	}
++
++	mf := miniflux.NewClient(mfb.Host, strings.Trim(string(apiKey), "\n"))
+ 
+ 	// Fetch all feeds.
+ 	feeds, err := mf.Feeds()
+-- 
+2.54.0
+

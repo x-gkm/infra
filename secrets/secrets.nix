@@ -25,4 +25,11 @@ in
     ];
     armor = true;
   };
+  "soju-gkm.age" = {
+    publicKeys = [
+      gkm
+      void-ptr
+    ];
+    armor = true;
+  };
 }

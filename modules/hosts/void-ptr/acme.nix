@@ -40,8 +40,22 @@ in
         };
       };
 
-      # Override caddy's config.
-      security.acme.certs."void-ptr.cc".group = "acme";
+      services.soju =
+        let
+          inherit (config.security.acme.certs."void-ptr.cc") directory;
+        in
+        {
+          hostName = "void-ptr.cc";
+          tlsCertificate = "${directory}/cert.pem";
+          tlsCertificateKey = "${directory}/key.pem";
+        };
+
+      security.acme.certs."void-ptr.cc" = {
+        # Override caddy's config.
+        group = "acme";
+        reloadServices = [ "caddy" "soju" ];
+      };
       systemd.services.caddy.serviceConfig.SupplementaryGroups = [ "acme" ];
+      systemd.services.soju.serviceConfig.SupplementaryGroups = [ "acme" ];
     };
 }

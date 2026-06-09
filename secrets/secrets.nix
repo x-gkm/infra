@@ -18,4 +18,11 @@ in
     ];
     armor = true;
   };
+  "miniflux-env.age" = {
+    publicKeys = [
+      gkm
+      void-ptr
+    ];
+    armor = true;
+  };
 }

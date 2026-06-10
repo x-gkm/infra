@@ -53,7 +53,10 @@ in
       security.acme.certs."void-ptr.cc" = {
         # Override caddy's config.
         group = "acme";
-        reloadServices = [ "caddy" "soju" ];
+        reloadServices = [
+          "caddy"
+          "soju"
+        ];
       };
       systemd.services.caddy.serviceConfig.SupplementaryGroups = [ "acme" ];
       systemd.services.soju.serviceConfig.SupplementaryGroups = [ "acme" ];

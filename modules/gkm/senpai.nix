@@ -9,7 +9,11 @@
         config = {
           address = "void-ptr.cc";
           nickname = "gkm";
-          password-cmd = [ "sh" "-c" "cat ${config.age.secrets.soju-gkm.path}" ];
+          password-cmd = [
+            "sh"
+            "-c"
+            "cat ${config.age.secrets.soju-gkm.path}"
+          ];
         };
       };
     };

@@ -7,10 +7,14 @@
       den.aspects.base
       den.aspects.lanzaboote
       den.aspects.sway
+      den.aspects.games
       den.batteries.hostname
     ];
 
-    provides.gkm.includes = [ den.aspects.sway ];
+    provides.gkm.includes = [
+      den.aspects.sway
+      den.aspects.games
+    ];
 
     nixos =
       { pkgs, ... }:

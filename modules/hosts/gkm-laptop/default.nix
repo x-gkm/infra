@@ -6,8 +6,11 @@
     includes = [
       den.aspects.base
       den.aspects.lanzaboote
+      den.aspects.sway
       den.batteries.hostname
     ];
+
+    provides.gkm.includes = [ den.aspects.sway ];
 
     nixos =
       { pkgs, ... }:

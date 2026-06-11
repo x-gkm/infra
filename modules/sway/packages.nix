@@ -8,6 +8,7 @@
         google-chrome
         wl-clipboard
         zbar
+        obsidian
       ];
     };
 }

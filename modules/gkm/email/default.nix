@@ -5,7 +5,6 @@
       accounts.email.accounts.personal =
         let
           address = "gokmen.kaplan.9163@gmail.com";
-          bwId = "b6a1848e-0ca4-4b89-906a-b46300ad24ba";
         in
         {
           primary = true;
@@ -22,13 +21,12 @@
             port = 587;
             tls.useStartTls = true;
           };
-          passwordCommand = "bw get password ${bwId}";
+          passwordCommand = "pass Email/${address}";
         };
 
       accounts.email.accounts.school =
         let
           address = "240201050@sivas.edu.tr";
-          bwId = "a30687d8-2722-49b8-95e3-b1fc01794f4b";
         in
         {
           inherit address;
@@ -43,7 +41,7 @@
             port = 587;
             tls.useStartTls = true;
           };
-          passwordCommand = "bw get password ${bwId}";
+          passwordCommand = "pass Email/${address}";
         };
     };
 }

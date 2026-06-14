@@ -10,7 +10,6 @@
 ### Reading E-mail
 
 ```bash
-export BW_SESSION="$(bw unlock --raw)" # Unlock the bitwarden vault.
 systemctl stop wg-quick-wg0 # Stop the VPN. Can't send mail through it.
 mbsync -a # Sync the mail.
 
@@ -18,7 +17,6 @@ aerc # Read the mail.
 
 msmtp-queue -r # Send pending email.
 mbsync -a
-bw lock
 systemctl start wg-quick-wg0
 ```
 
@@ -44,7 +42,7 @@ systemctl start wg-quick-wg0
 - IRC bouncer: soju
 - Container runtime: podman
 - Image viewer: imv
-- Password manager: Bitwarden
+- Password manager: Bitwarden, pass
 - Media player: mpv
 - Fetch: fastfetch
 - Version control: git
@@ -73,7 +71,6 @@ systemctl start wg-quick-wg0
 - Icon theme
 
 ### Secret management
-- Some other way of managing secrets
 - Gpg and gpg email
 - Encrypt the ssh key somehow
 - Encrypt the secure boot key

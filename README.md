@@ -74,8 +74,6 @@ systemctl start wg-quick-wg0
 
 ### Secret management
 - Some other way of managing secrets
-- gpg-agent
-- ssh-agent (bitwarden?)
 - Gpg and gpg email
 - Encrypt the ssh key somehow
 - Encrypt the secure boot key

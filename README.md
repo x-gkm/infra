@@ -37,6 +37,7 @@ systemctl start wg-quick-wg0
 - Sending email: msmtp
 - Email sync: isync
 - Email queue: msmtp-queue
+- Email encryption: gpg
 - QR code generator: qrencode
 - QR code reader: zbar
 - IRC bouncer: soju
@@ -71,7 +72,6 @@ systemctl start wg-quick-wg0
 - Icon theme
 
 ### Secret management
-- Gpg and gpg email
 - Encrypt the ssh key somehow
 - Encrypt the secure boot key
 - FDE

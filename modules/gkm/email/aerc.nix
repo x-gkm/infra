@@ -5,7 +5,10 @@
       programs.aerc = {
         enable = true;
         extraConfig = {
-          general.unsafe-accounts-conf = true;
+          general = {
+            unsafe-accounts-conf = true;
+            pgp-provider = "gpg";
+          };
           filters = {
             "text/plain" = "colorize";
             "subject,~^\\[PATCH" = "hldiff";

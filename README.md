@@ -77,6 +77,7 @@ systemctl start wg-quick-wg0
 - ssh-agent (bitwarden?)
 - Gpg and gpg email
 - Encrypt the ssh key somehow
+- Encrypt the secure boot key
 - FDE
 
 ### GUI
@@ -89,6 +90,8 @@ systemctl start wg-quick-wg0
 - Proper subpixel rendering
 - Display manager
 - Logout dialog
+- Clipboard manager
+- Make the bitwarden password authentication dialog float
 
 ### Shell
 - fzf

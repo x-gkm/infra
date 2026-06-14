@@ -9,13 +9,11 @@
         internalInterfaces = [ "wg0" ];
       };
 
-      age.secrets.wg0-key = {
-        file = ../secrets/wg0-void-ptr.age;
-      };
+      sops.secrets."wg0/void-ptr" = { };
 
       networking.wg-quick.interfaces.wg0 = {
         type = "amneziawg";
-        privateKeyFile = config.age.secrets.wg0-key.path;
+        privateKeyFile = config.sops.secrets."wg0/void-ptr".path;
         address = [
           "10.8.0.1/24"
           "fdf5:676b:56fa::1/64"
@@ -59,13 +57,11 @@
   den.aspects.gkm-laptop.nixos =
     { config, ... }:
     {
-      age.secrets.wg0-key = {
-        file = ../secrets/wg0-gkm-laptop.age;
-      };
+      sops.secrets."wg0/gkm-laptop" = { };
 
       networking.wg-quick.interfaces.wg0 = {
         type = "amneziawg";
-        privateKeyFile = config.age.secrets.wg0-key.path;
+        privateKeyFile = config.sops.secrets."wg0/gkm-laptop".path;
         address = [
           "10.8.0.2/24"
           "fdf5:676b:56fa::2/64"

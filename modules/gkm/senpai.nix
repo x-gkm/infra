@@ -2,7 +2,7 @@
   den.aspects.gkm.homeManager =
     { config, pkgs, ... }:
     {
-      age.secrets.soju-gkm.file = ../../secrets/soju-gkm.age;
+      sops.secrets."soju/gkm" = { };
 
       programs.senpai = {
         enable = true;
@@ -12,7 +12,7 @@
           password-cmd = [
             "sh"
             "-c"
-            "cat ${config.age.secrets.soju-gkm.path}"
+            "cat ${config.sops.secrets."soju/gkm".path}"
           ];
         };
       };

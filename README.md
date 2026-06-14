@@ -49,7 +49,7 @@ systemctl start wg-quick-wg0
 - Fetch: fastfetch
 - Version control: git
 - Version control UI: lazygit
-- Secret management: agenix
+- Secret management: sops-nix
 - Screenshots: grimshot
 - RSS reader: newsboat
 - Brightness control: brightnessctl

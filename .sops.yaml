@@ -1,0 +1,14 @@
+keys:
+  - &gkm_pgp 37de5005d99c3c49b9f07acbb829a3e8bf32ec5a
+  - &gkm_age age1d8mml7074h5tnjtnqc8k7grzlwq3cdl56gxy7qfqdv7s78qypdwq80cnrf
+  - &void-ptr age1c6ck6j4v9cx0cqt5euacqa339nu3gf5au8k5qtq69xjxm4jheves5l7ue7
+  - &gkm-laptop age1v72g2kh2gts9y7atwsnvgf7mhlfs9atftj0ld6da70egjwqj0gtqxafzxc
+creation_rules:
+  - path_regex: modules/secrets/[^/]+\.(yaml|json|env|ini)$
+    key_groups:
+      - pgp:
+          - *gkm_pgp
+        age:
+          - *gkm_age
+          - *void-ptr
+          - *gkm-laptop

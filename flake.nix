@@ -4,10 +4,6 @@
   outputs = inputs: inputs.flake-parts.lib.mkFlake { inherit inputs; } (inputs.import-tree ./modules);
 
   inputs = {
-    agenix = {
-      url = "github:ryantm/agenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     den.url = "github:denful/den";
     flake-file.url = "github:vic/flake-file";
     flake-parts = {
@@ -26,6 +22,10 @@
     nixpkgs.url = "github:NixOS/nixpkgs?ref=nixos-unstable";
     nixvim = {
       url = "github:nix-community/nixvim";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

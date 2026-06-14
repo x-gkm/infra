@@ -63,6 +63,7 @@ systemctl start wg-quick-wg0
 - Office suite: Google docs
 - Note taking: Obsidian
 - Config structure: den
+- Clipboard manager: wl-clip-persist
 
 ## To try out
 ### Ricing
@@ -90,7 +91,6 @@ systemctl start wg-quick-wg0
 - Proper subpixel rendering
 - Display manager
 - Logout dialog
-- Clipboard manager
 - Make the bitwarden password authentication dialog float
 
 ### Shell

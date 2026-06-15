@@ -106,4 +106,4 @@ systemctl start wg-quick-wg0
 - zram
 - Deployment strategy
 - Impermanence
-- Don't forwards port 25 to wireguard, don't forward reddit to wireguard
+- Don't forward the SMTP port to wireguard, don't forward reddit to wireguard

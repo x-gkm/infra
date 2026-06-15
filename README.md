@@ -74,6 +74,7 @@ systemctl start wg-quick-wg0
 ### Secret management
 - Encrypt the ssh key somehow
 - Encrypt the secure boot key
+- Maybe use age keys instead of reusing host/user ssh keys
 - FDE
 
 ### GUI
@@ -87,6 +88,7 @@ systemctl start wg-quick-wg0
 - Display manager
 - Logout dialog
 - Make the bitwarden password authentication dialog float
+- gpg-agent pinentry
 
 ### Shell
 - fzf

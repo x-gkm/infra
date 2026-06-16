@@ -1,5 +1,5 @@
 {
-  den.aspects.void-ptr.nixos = {
+  den.aspects.base.nixos = {
     services.postgresql.enable = true;
   };
 }

@@ -14,7 +14,7 @@ in
         };
 
         certs."void-ptr.cc" = {
-          extraDomainNames = [ "feeds.void-ptr.cc" ];
+          extraDomainNames = [ "feeds.void-ptr.cc" "algoooo.void-ptr.cc" ];
         };
       };
 
@@ -30,6 +30,16 @@ in
         };
 
         "feeds.void-ptr.cc" = {
+          useACMEHost = "void-ptr.cc";
+          extraConfig = ''
+            handle /.well-known/acme-challenge/* {
+              root ${webroot}
+              file_server
+            }
+          '';
+        };
+
+        "algoooo.void-ptr.cc" = {
           useACMEHost = "void-ptr.cc";
           extraConfig = ''
             handle /.well-known/acme-challenge/* {
